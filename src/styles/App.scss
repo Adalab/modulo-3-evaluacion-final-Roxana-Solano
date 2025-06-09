@@ -10,12 +10,8 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .app_container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-.app-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -34,7 +30,7 @@ body {
   color: #d4af37;
 }
 
-.main_content {
+.main_contect {
   flex: 1;
   padding: 2rem;
   text-align: center;
