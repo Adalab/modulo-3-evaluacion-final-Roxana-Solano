@@ -43,3 +43,25 @@ body {
   font-size: 0.9rem;
   color: #ccc;
 }
+.character-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.character-list li {
+  background-color: #2a2a2d;
+  border-radius: 10px;
+  padding: 1rem;
+  max-width: 200px;
+  text-align: center;
+  box-shadow: 0 0 10px #000;
+  transition: transform 0.3s ease;
+}
+
+.character-list li:hover {
+  transform: scale(1.05);
+}
