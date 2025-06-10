@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import CharacterCard from "./CharacterCard";
 import "../styles/App.scss";
 
 function App() {
@@ -36,20 +37,8 @@ function App() {
       <main className="main_contect">
         <h2>Lista de Personajes</h2>
         <ul className="character-list">
-          {" "}
           {characters.map((char) => (
-            <li key={char.id}>
-              <img
-                src={
-                  char.image ||
-                  "https://placehold.co/210x295/1a1a1d/ccc?text=No+Image"
-                }
-                alt={char.name}
-                width="150"
-              />
-              <h3>{char.name}</h3>
-              <p>{char.species}</p>
-            </li>
+            <CharacterCard key={char.id} character={char} />
           ))}
         </ul>
       </main>
