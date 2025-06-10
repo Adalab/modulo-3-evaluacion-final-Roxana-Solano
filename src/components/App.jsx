@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import CharacterCard from "./CharacterCard";
+import CharacterList from "./CharacterList";
 import "../styles/App.scss";
 
 function App() {
@@ -36,11 +36,7 @@ function App() {
 
       <main className="main_contect">
         <h2>Lista de Personajes</h2>
-        <ul className="character-list">
-          {characters.map((char) => (
-            <CharacterCard key={char.id} character={char} />
-          ))}
-        </ul>
+        <CharacterList characters={characters} />
       </main>
 
       <footer className="footer">
