@@ -2,7 +2,7 @@ import CharacterCard from "./CharacterCard";
 
 function CharacterList({ characters }) {
   if (characters.lenght === 0) {
-    return <p>No hay núngun personaje.</p>;
+    return <p className="mensaje">No hay núngun personaje.</p>;
   }
   return (
     <>

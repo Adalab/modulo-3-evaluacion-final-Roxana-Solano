@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import CharacterList from "./CharacterList";
 import FilterByName from "./FilterByName";
+import FilterByHouse from "./FilterByHouse,";
 import "../styles/App.scss";
 
 function App() {
@@ -42,11 +43,12 @@ function App() {
       </header>
 
       <main className="main_contect">
+        <h2>Lista de Personajes</h2>
         <FilterByName
           searchName={searchName}
           onChange={(ev) => setSearchName(ev.target.value)}
         />
-        <h2>Lista de Personajes</h2>
+
         <CharacterList characters={filteredCharacters} />
       </main>
 
