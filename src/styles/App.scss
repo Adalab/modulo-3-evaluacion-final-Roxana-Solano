@@ -30,7 +30,7 @@ body {
   color: #d4af37;
 }
 
-.main_contect {
+.main_content {
   flex: 1;
   width: 95%;
   max-width: 90rem;
@@ -93,4 +93,43 @@ select {
 .filter_input:focus,
 select:focus {
   box-shadow: 0 0 0 2px;
+}
+.character-detail {
+  background: #292d36;
+  border-radius: 37px;
+
+  padding: 2rem 0.5rem;
+  max-width: 491px;
+  margin: 4.5rem auto 1.5rem auto;
+  text-align: center;
+  position: relative;
+  color: #eaeaea;
+  animation: fadeInDetail 0.8s;
+}
+.character-detail ul {
+  padding: 0;
+  list-style: none;
+  margin: 0.6rem 0 1.2rem 0;
+}
+.detail-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.6rem;
+  font-size: 1.13rem;
+  font-weight: bold;
+  color: #fff7c8;
+
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px #0006;
+  cursor: pointer;
+  text-decoration: none;
+
+  /* &:hover,
+  &:focus {
+    background: linear-gradient(90deg, #f0c75e 60%, #ae0001 100%);
+    color: #23272f;
+    transform: translateY(-3px) scale(1.04);
+    outline: 2px solid #ae0001;
+  } */
 }

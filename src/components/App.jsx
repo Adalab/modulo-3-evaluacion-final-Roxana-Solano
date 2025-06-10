@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import CharacterList from "./CharacterList";
 import FilterByName from "./FilterByName";
-import FilterByHouse from "./FilterByHouse,";
-import { BrowserRouter, Routes, Router } from "react-router-dom";
-import characterDeatail from "./CharacterDetail";
+import FilterByHouse from "./FilterByHouse";
+/* import characterDeatail from "./CharacterDetail"; */
 import "../styles/App.scss";
 
 function App() {
@@ -47,7 +46,7 @@ function App() {
         <h1 className="title">Wizarding World Directory</h1>
       </header>
 
-      <main className="main_contect">
+      <main className="main_content">
         <h2 className="lisper">Lista de Personajes</h2>
         <FilterByHouse
           house={house}
