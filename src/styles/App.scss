@@ -32,8 +32,11 @@ body {
 
 .main_contect {
   flex: 1;
-  padding: 2rem;
-  text-align: center;
+  width: 95%;
+  max-width: 90rem;
+  margin: 0px auto 1rem auto;
+  padding: 4rem 0;
+  display: block;
 }
 
 .footer {
@@ -47,8 +50,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
-  padding: 0;
+  gap: 1rem;
+  padding: 4rem;
   list-style: none;
 }
 
@@ -65,7 +68,29 @@ body {
 .character-list li:hover {
   transform: scale(1.05);
 }
+.lisper {
+  margin-bottom: 2rem;
+}
 
-.mensaje {
-  color: red;
+.filter_form,
+form {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.filter_input,
+select {
+  border: none;
+  background: white;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+.filter_input:focus,
+select:focus {
+  box-shadow: 0 0 0 2px;
 }

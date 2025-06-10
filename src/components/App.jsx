@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import CharacterList from "./CharacterList";
 import FilterByName from "./FilterByName";
 import FilterByHouse from "./FilterByHouse,";
+import { BrowserRouter, Routes, Router } from "react-router-dom";
+import characterDeatail from "./CharacterDetail";
 import "../styles/App.scss";
 
 function App() {
@@ -46,7 +48,7 @@ function App() {
       </header>
 
       <main className="main_contect">
-        <h2>Lista de Personajes</h2>
+        <h2 className="lisper">Lista de Personajes</h2>
         <FilterByHouse
           house={house}
           onChange={(ev) => setHouse(ev.target.value)}

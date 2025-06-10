@@ -1,8 +1,13 @@
 function FilterByHouse({ house, onChange }) {
   return (
-    <form onSubmit={(ev) => ev.preventDefault()}>
+    <form className="filter_form" onSubmit={(ev) => ev.preventDefault()}>
       <label htmlFor="house">Filtrar por casa </label>
-      <select id="house" value={house} onChange={onChange}>
+      <select
+        className="filter_input"
+        id="house"
+        value={house}
+        onChange={onChange}
+      >
         <option value="">Todas</option>
         <option value="Gryffindor">Gryffindor</option>
         <option value="Slytherin">Slytherin</option>

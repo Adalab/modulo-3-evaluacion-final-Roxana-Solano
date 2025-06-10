@@ -2,6 +2,7 @@ function FilterByName({ searchName, onChange }) {
   return (
     <div>
       <form
+        className="filter_form"
         onChange={(ev) => {
           ev.preventDefault();
         }}
@@ -9,6 +10,7 @@ function FilterByName({ searchName, onChange }) {
         <label htmlFor="searName">Search by name </label>
         <input
           id="searName"
+          className="filter_input"
           type="text"
           value={searchName}
           onChange={onChange}
