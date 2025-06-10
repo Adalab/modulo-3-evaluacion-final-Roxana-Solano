@@ -14,7 +14,7 @@ function App() {
       .then((data) => {
         const cleanCharacters = data.map((character) => {
           return {
-            id: character.image || `${character.name}-${character.house}`,
+            id: character.id,
             name: character.name,
             image: character.image,
             species: character.species,
