@@ -11,7 +11,7 @@ function CharacterCard({ character }) {
           width="150"
         />
         <h3>{character.name}</h3>
-        <p>{character.species}</p>
+        <p> Specie:{character.species}</p>
       </li>
     </>
   );

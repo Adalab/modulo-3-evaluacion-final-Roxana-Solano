@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import CharacterList from "./CharacterList";
+import FilterByName from "./FilterByName";
 import "../styles/App.scss";
 
 function App() {
   const [characters, setCharacters] = useState([]);
+  const [searchName, setSearchName] = useState("");
+  /* const placehold = "https://placehold.co/210x295/1a1a1d/ccc?text=No+Image"; */
 
   useEffect(() => {
     fetch("https://hp-api.onrender.com/api/characters")
@@ -11,7 +14,7 @@ function App() {
       .then((data) => {
         const cleanCharacters = data.map((character) => {
           return {
-            id: character.name,
+            id: character.image || `${character.name}-${character.house}`,
             name: character.name,
             image: character.image,
             species: character.species,
@@ -28,6 +31,10 @@ function App() {
       });
   }, []);
 
+  const filteredCharacters = characters.filter((character) =>
+    character.name.toLowerCase().includes(searchName.toLocaleLowerCase())
+  );
+
   return (
     <div className="app_container">
       <header className="header">
@@ -35,8 +42,12 @@ function App() {
       </header>
 
       <main className="main_contect">
+        <FilterByName
+          searchName={searchName}
+          onChange={(ev) => setSearchName(ev.target.value)}
+        />
         <h2>Lista de Personajes</h2>
-        <CharacterList characters={characters} />
+        <CharacterList characters={filteredCharacters} />
       </main>
 
       <footer className="footer">
