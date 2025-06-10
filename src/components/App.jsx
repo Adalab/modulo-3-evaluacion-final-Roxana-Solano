@@ -7,6 +7,7 @@ import "../styles/App.scss";
 function App() {
   const [characters, setCharacters] = useState([]);
   const [searchName, setSearchName] = useState("");
+  const [house, setHouse] = useState("");
   /* const placehold = "https://placehold.co/210x295/1a1a1d/ccc?text=No+Image"; */
 
   useEffect(() => {
@@ -32,9 +33,11 @@ function App() {
       });
   }, []);
 
-  const filteredCharacters = characters.filter((character) =>
-    character.name.toLowerCase().includes(searchName.toLocaleLowerCase())
-  );
+  const filteredCharacters = characters
+    .filter((character) => !house || character.house === house)
+    .filter((character) =>
+      character.name.toLowerCase().includes(searchName.toLowerCase())
+    );
 
   return (
     <div className="app_container">
@@ -44,6 +47,10 @@ function App() {
 
       <main className="main_contect">
         <h2>Lista de Personajes</h2>
+        <FilterByHouse
+          house={house}
+          onChange={(ev) => setHouse(ev.target.value)}
+        />
         <FilterByName
           searchName={searchName}
           onChange={(ev) => setSearchName(ev.target.value)}
