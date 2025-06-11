@@ -30,7 +30,7 @@ function CharacterDetail() {
     return (
       <div>
         <div className="character-detail-page">
-          <p className="existe">El personaje que buscas no existe</p>
+          <p className="mensaje">El personaje que buscas no existe</p>
           <Link to="/" className="detail-btn">
             ⬅️ Volver al listado
           </Link>

@@ -7,7 +7,7 @@ function FilterByName({ searchName, onChange }) {
           ev.preventDefault();
         }}
       >
-        <label htmlFor="searName">Search by name </label>
+        <label htmlFor="searName">Buscar por nombre</label>
         <input
           id="searName"
           className="filter_input"
