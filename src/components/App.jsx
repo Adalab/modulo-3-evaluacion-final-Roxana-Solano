@@ -7,9 +7,14 @@ import "../styles/App.scss";
 
 function App() {
   const [characters, setCharacters] = useState([]);
-  const [searchName, setSearchName] = useState("");
+  const [searchName, setSearchName] = useState(
+    () => localStorage.getItem("searchName") || ""
+  );
   const [house, setHouse] = useState("");
-  /* const placehold = "https://placehold.co/210x295/1a1a1d/ccc?text=No+Image"; */
+
+  useEffect(() => {
+    localStorage.setItem("searchName", searchName);
+  }, [searchName]);
 
   useEffect(() => {
     fetch("https://hp-api.onrender.com/api/characters")
