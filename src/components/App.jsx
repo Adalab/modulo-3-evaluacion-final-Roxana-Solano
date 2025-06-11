@@ -10,11 +10,15 @@ function App() {
   const [searchName, setSearchName] = useState(
     () => localStorage.getItem("searchName") || ""
   );
-  const [house, setHouse] = useState("");
+  const [house, setHouse] = useState(() => localStorage.getItem("house") || "");
 
   useEffect(() => {
     localStorage.setItem("searchName", searchName);
   }, [searchName]);
+
+  useEffect(() => {
+    localStorage.setItem("house", house);
+  }, [house]);
 
   useEffect(() => {
     fetch("https://hp-api.onrender.com/api/characters")
@@ -39,6 +43,12 @@ function App() {
       });
   }, []);
 
+  function handleReset() {
+    setSearchName("");
+    setHouse("");
+    localStorage.removeItem("searchName");
+    localStorage.removeItem("house");
+  }
   const filteredCharacters = characters
     .filter((character) => !house || character.house === house)
     .filter((character) =>
@@ -61,6 +71,9 @@ function App() {
           searchName={searchName}
           onChange={(ev) => setSearchName(ev.target.value)}
         />
+        <button className="reset-btn" onClick={handleReset}>
+          ✨ Reiniciar búsqueda
+        </button>
 
         <CharacterList characters={filteredCharacters} />
       </main>

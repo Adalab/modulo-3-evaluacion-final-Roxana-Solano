@@ -72,6 +72,26 @@ select:focus {
   box-shadow: 0 0 0 2px #d4af37;
 }
 
+//btnreset
+.reset-btn {
+  margin-left: 1rem;
+  padding: 0.6rem 1.5rem;
+  background: linear-gradient(90deg, #f0c75e 60%, #d4af37 100%);
+  color: #23242b;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px #0005;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, transform 0.16s;
+}
+.reset-btn:hover {
+  background: linear-gradient(90deg, #355c7d 60%, #15a186 100%);
+  color: #fff;
+  transform: scale(1.05);
+}
+
 //characterlist
 .character-list {
   display: flex;
