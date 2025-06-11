@@ -29,42 +29,61 @@ function CharacterDetail() {
   if (caracterDetail.length === 0) {
     return (
       <div>
-        <p className="mensaje">El personaje que buscas no existe</p>
-        <Link to="/" className="detail-btn">
-          ⬅️ Volver al listado
-        </Link>
+        <div className="character-detail-page">
+          <p className="existe">El personaje que buscas no existe</p>
+          <Link to="/" className="detail-btn">
+            ⬅️ Volver al listado
+          </Link>
+        </div>
+        <footer className="footer">
+          <p>&copy; 2025 React Project by Roxana Solano</p>
+        </footer>
       </div>
     );
   }
 
   return (
-    <div className="character-detail">
-      <img
-        src={
-          caracterDetail.image ||
-          "https://placehold.co/210x295/1a1a1d/ccc?text=No+Image"
-        }
-        alt={caracterDetail.name}
-      />
-      <h2>{caracterDetail.name}</h2>
-      <p>Casa: {caracterDetail.house || "Desconocida"}</p>
-      <p>Estado: {caracterDetail.alive ? "Vivo 🟢" : "Muerto ⚰️"}</p>
-      <p>Género: {caracterDetail.gender}</p>
-      <p>Especie: {caracterDetail.species}</p>
-      {caracterDetail.alternateNames &&
-        caracterDetail.alternateNames.length > 0 && (
-          <div>
-            <strong>Otros nombres:</strong>
-            <ul>
-              {caracterDetail.alternateNames.map((name, idx) => (
-                <li key={idx}>{name}</li>
-              ))}
-            </ul>
+    <div>
+      <div className="character-detail-page">
+        <div className="detail-header">
+          <h2>{caracterDetail.name}</h2>
+        </div>
+        <main className="detail-card">
+          <img
+            src={
+              caracterDetail.image ||
+              "https://placehold.co/210x295/1a1a1d/ccc?text=No+Image"
+            }
+            alt={caracterDetail.name}
+            className="detail-img"
+          />
+          <div className="detail-info">
+            <h2>{caracterDetail.name}</h2>
+            <p>Casa: {caracterDetail.house || "Desconocida"}</p>
+            <p>Estado: {caracterDetail.alive ? "Vivo 🟢" : "Muerto ⚰️"}</p>
+            <p>Género: {caracterDetail.gender}</p>
+            <p>Especie: {caracterDetail.species}</p>
+            {caracterDetail.alternateNames &&
+              caracterDetail.alternateNames.length > 0 && (
+                <div>
+                  <strong>Otros nombres:</strong>
+                  <ul>
+                    {caracterDetail.alternateNames.map((name, idx) => (
+                      <li key={idx}>{name}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
           </div>
-        )}
-      <Link to="/" className="detail-btn">
-        ⬅️ Volver al listado
-      </Link>
+        </main>
+        <Link to="/" className="detail-btn">
+          ⬅️ Volver al listado
+        </Link>
+      </div>
+
+      <footer className="footer">
+        <p>&copy; 2025 React Project by Roxana Solano</p>
+      </footer>
     </div>
   );
 }

@@ -3,7 +3,7 @@ function FilterByName({ searchName, onChange }) {
     <div>
       <form
         className="filter_form"
-        onChange={(ev) => {
+        onSubmit={(ev) => {
           ev.preventDefault();
         }}
       >

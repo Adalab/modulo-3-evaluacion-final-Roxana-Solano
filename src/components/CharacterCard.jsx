@@ -4,7 +4,7 @@ function CharacterCard({ character }) {
   return (
     <>
       <li className="character-card">
-        <Link to={`/character/${character.id}`}>
+        <Link className="a" to={`/character/${character.id}`}>
           <img
             src={
               character.image ||
