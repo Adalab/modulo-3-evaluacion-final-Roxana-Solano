@@ -63,6 +63,7 @@ function App() {
 
       <main className="main_content">
         <h2 className="lisper">Lista de Personajes</h2>
+
         <FilterByHouse
           house={house}
           onChange={(ev) => setHouse(ev.target.value)}
@@ -71,8 +72,9 @@ function App() {
           searchName={searchName}
           onChange={(ev) => setSearchName(ev.target.value)}
         />
+
         <button className="reset-btn" onClick={handleReset}>
-          ✨ Reiniciar búsqueda
+          <i class="fas fa-rotate-right"></i>
         </button>
 
         <CharacterList characters={filteredCharacters} />
