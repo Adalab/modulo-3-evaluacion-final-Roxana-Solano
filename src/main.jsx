@@ -5,7 +5,7 @@ import App from "./components/App.jsx";
 import CharacterDetail from "./components/CharacterDetail.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
+  <BrowserRouter basename="/modulo-3-evaluacion-final-Roxana-Solano">
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/character/:id" element={<CharacterDetail />} />
